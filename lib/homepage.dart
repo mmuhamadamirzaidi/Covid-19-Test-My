@@ -13,6 +13,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   Map worldData;
   fetchWorldWideData() async {
     http.Response response = await http.get('https://corona.lmao.ninja/v2/all');
@@ -131,9 +132,22 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,
                       color: Colors.grey[700]),
                 ),
+//               Container(
+//                      decoration: BoxDecoration(
+//                          color: primaryBlack,
+//                          borderRadius: BorderRadius.circular(5)),
+//                      padding: EdgeInsets.all(10),
+//                      child: Text(
+//                        'Updated',
+//                        style: TextStyle(
+//                            fontSize: 14,
+//                            color: Colors.white),
+//                      )
+//               ),
               ],
             ),
           ),
+
           myData == null
               ? Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
