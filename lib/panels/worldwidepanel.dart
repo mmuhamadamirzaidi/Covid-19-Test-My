@@ -68,7 +68,6 @@ class StatusPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
 
     return Container(
       margin: EdgeInsets.all(10),
