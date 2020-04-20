@@ -12,10 +12,10 @@ class MywidePanel extends StatelessWidget {
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, childAspectRatio: 2),
+            crossAxisCount: 2, childAspectRatio: 2.5),
         children: <Widget>[
           StatusPanel(
-            title: 'Confirmed',
+            title: 'Total Cases',
             panelColor: Colors.red[100],
             textColor: Colors.red,
             count: myData['cases'].toString(),
@@ -33,7 +33,7 @@ class MywidePanel extends StatelessWidget {
             count: myData['recovered'].toString(),
           ),
           StatusPanel(
-            title: 'Deaths',
+            title: 'Total Deaths',
             panelColor: Colors.grey[400],
             textColor: Colors.grey[900],
             count: myData['deaths'].toString(),
