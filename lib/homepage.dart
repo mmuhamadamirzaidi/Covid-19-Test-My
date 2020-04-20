@@ -81,6 +81,7 @@ class _HomePageState extends State<HomePage> {
                   textAlign: TextAlign.center,
             ),
           ),
+
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
             child: Row(
@@ -99,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                       decoration: BoxDecoration(
                           color: primaryBlack,
-//                          borderRadius: BorderRadius.circular(5)
+                          borderRadius: BorderRadius.circular(5)
                       ),
                       padding: EdgeInsets.all(10),
                       child: Text(
@@ -170,9 +171,9 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.grey[700]),
             ),
           ),
-          SizedBox(
-            height: 10,
-          ),
+//          SizedBox(
+//            height: 10,
+//          ),
 
           countryData == null
               ? Row(
@@ -185,12 +186,9 @@ class _HomePageState extends State<HomePage> {
               : MostAffectedPanel(
             countryData: countryData,
           ),
-
-//          countryData == null
-//              ? Container()
-//              : MostAffectedPanel(
-//            countryData: countryData,
-//          ),
+          SizedBox(
+            height: 20,
+          ),
 
           InfoPanel(),
           SizedBox(
@@ -202,7 +200,7 @@ class _HomePageState extends State<HomePage> {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
           )),
           SizedBox(
-            height: 50,
+            height: 20,
           )
         ],
       )),

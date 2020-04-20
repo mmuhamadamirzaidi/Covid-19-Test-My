@@ -15,9 +15,13 @@ class InfoPanel extends StatelessWidget {
                   context, MaterialPageRoute(builder: (context) => FAQPage()));
             },
             child: Container(
+              height: 50,
               padding: EdgeInsets.symmetric(vertical: 12, horizontal: 10),
               margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-              color: primaryBlack,
+              decoration: BoxDecoration(
+                  color: primaryBlack,
+                  borderRadius: BorderRadius.circular(5)
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -40,9 +44,13 @@ class InfoPanel extends StatelessWidget {
               launch('https://covid19responsefund.org/');
             },
             child: Container(
+              height: 50,
               padding: EdgeInsets.symmetric(vertical: 12, horizontal: 10),
               margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-              color: primaryBlack,
+              decoration: BoxDecoration(
+                  color: primaryBlack,
+                  borderRadius: BorderRadius.circular(5)
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -66,9 +74,13 @@ class InfoPanel extends StatelessWidget {
                   'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters');
             },
             child: Container(
+              height: 50,
               padding: EdgeInsets.symmetric(vertical: 12, horizontal: 10),
               margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-              color: primaryBlack,
+              decoration: BoxDecoration(
+                  color: primaryBlack,
+                  borderRadius: BorderRadius.circular(5)
+              ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[

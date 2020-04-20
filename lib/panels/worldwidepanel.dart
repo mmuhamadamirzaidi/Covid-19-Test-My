@@ -69,8 +69,7 @@ class StatusPanel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
-      height: 80,
+      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
       decoration: BoxDecoration(
           color: panelColor, borderRadius: BorderRadius.circular(5)),
       child: Column(

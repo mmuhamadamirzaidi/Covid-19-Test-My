@@ -16,7 +16,7 @@ class MostAffectedPanel extends StatelessWidget {
             height: 120,
               decoration: BoxDecoration(
               color: Colors.grey,
-//              borderRadius: BorderRadius.circular(5)
+              borderRadius: BorderRadius.circular(5)
               ),
             margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
             child: Row(
