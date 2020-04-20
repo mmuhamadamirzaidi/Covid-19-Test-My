@@ -43,82 +43,72 @@ class _CountryPageState extends State<CountryPage> {
       body: countryData == null
           ? Center()
           : ListView.builder(
-              itemBuilder: (context, index) {
-                return Container(
-                  decoration: BoxDecoration(
-                      color: Colors.grey[100],
-                      borderRadius: BorderRadius.circular(5)),
-                  height: 120,
-                  margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                  child: Row(
+        itemBuilder: (context, index) {
+          return Container(
+            height: 120,
+            decoration: BoxDecoration(
+                color: Colors.grey[500],
+                borderRadius: BorderRadius.circular(5)
+            ),
+            margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            child: Row(
+              children: <Widget>[
+                Expanded(
+                  child: Image.network(
+                      countryData[index]['countryInfo']['flag'],
+                      height: 25),
+                  flex: 2,
+                ),
+                Expanded(
+                  flex: 4,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Container(
-                        width: 140,
-                        margin: EdgeInsets.symmetric(horizontal: 20),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              countryData[index]['country'],
-                            ),
-                            Image.network(
-                              countryData[index]['countryInfo']['flag'],
-                              height: 50,
-                              width: 60,
-                            ),
-                          ],
-                        ),
+                      Text(
+                        countryData[index]['country'],
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold),
                       ),
-                      Expanded(
-                          child: Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Text(
-                              'Total Cases: ' +
-                                  countryData[index]['cases'].toString(),
-                              style: TextStyle(color: Colors.red),
+                      Text(
+                        'Total Cases: ' +
+                            countryData[index]['cases'].toString(),
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      Text(
+                        'Total Deaths: ' +
+                            countryData[index]['deaths'].toString(),
+                        style: TextStyle(color: Colors.white),
+                      ),
+                      SizedBox(height: 16),
+                      Row(
+                        children: <Widget>[
+                          Icon(
+                            Icons.location_on,
+                            color: Colors.white,
+                            size: 16,
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Flexible(
+                            child: Text(
+                              countryData[index]['continent'],
+                              style: TextStyle(color: Colors.white),
                             ),
-                            Text(
-                              'Active: ' +
-                                  countryData[index]['active'].toString(),
-                              style: TextStyle(color: Colors.yellow[900]),
-                            ),
-                            Text(
-                              'Recovered: ' +
-                                  countryData[index]['recovered'].toString(),
-                              style: TextStyle(color: Colors.green),
-                            ),
-                            Text(
-                              'Total Deaths: ' +
-                                  countryData[index]['deaths'].toString(),
-                              style: TextStyle(
-                                  color: Theme.of(context).brightness ==
-                                          Brightness.dark
-                                      ? Colors.grey[100]
-                                      : Colors.grey[900]),
-                            ),
-                            Text(
-                              'New Cases: ' +
-                                  countryData[index]['todayCases'].toString(),
-                              style: TextStyle(color: Colors.blue),
-                            ),
-                            Text(
-                              'New Deaths: ' +
-                                  countryData[index]['todayDeaths'].toString(),
-                              style: TextStyle(color: Colors.blue),
-                            ),
-                          ],
-                        ),
-                      ))
+                          ),
+                        ],
+                      ),
                     ],
                   ),
-                );
-              },
-              itemCount: countryData == null ? 0 : countryData.length,
+                ),
+              ],
             ),
+          );
+        },
+        itemCount: countryData == null ? 0 : countryData.length,
+      ),
     );
   }
 }
