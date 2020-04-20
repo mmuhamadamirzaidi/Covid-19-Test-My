@@ -68,11 +68,11 @@ class StatusPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       margin: EdgeInsets.all(10),
       height: 80,
-      color: panelColor,
+      decoration: BoxDecoration(
+          color: panelColor, borderRadius: BorderRadius.circular(5)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
@@ -83,8 +83,7 @@ class StatusPanel extends StatelessWidget {
           ),
           Text(
             count,
-            style: TextStyle(
-                fontSize: 16, color: textColor),
+            style: TextStyle(fontSize: 16, color: textColor),
           )
         ],
       ),

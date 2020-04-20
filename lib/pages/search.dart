@@ -40,17 +40,15 @@ return Container();
    return ListView.builder(
        itemCount: suggestionList.length,
        itemBuilder: (context,index){
-     return Card(
-       color: Colors.grey[100],
-       shadowColor: Colors.white,
-       child: Container(
+     return Container(
+        color: Colors.grey[100],
          height: 120,
-         margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+         margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
          child: Row(
            children: <Widget>[
              Container(
                width: 140,
-               margin: EdgeInsets.symmetric(horizontal: 10),
+               margin: EdgeInsets.symmetric(horizontal: 20),
                child: Column(
                  crossAxisAlignment: CrossAxisAlignment.start,
                  mainAxisAlignment: MainAxisAlignment.center,
@@ -112,8 +110,8 @@ return Container();
                  ))
            ],
          ),
-       ),
-     );
+       );
+
    });
   }
 

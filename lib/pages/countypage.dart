@@ -41,21 +41,20 @@ class _CountryPageState extends State<CountryPage> {
       ),
       body: countryData == null
           ? Center(
-              child: CircularProgressIndicator(),
+
             )
+
           : ListView.builder(
               itemBuilder: (context, index) {
-                return Card(
-                  color: Colors.grey[100],
-                  shadowColor: Colors.white,
-                  child: Container(
+                return Container(
+                    color: Colors.grey[100],
                     height: 120,
-                    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                    margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
                     child: Row(
                       children: <Widget>[
                         Container(
                           width: 140,
-                          margin: EdgeInsets.symmetric(horizontal: 10),
+                          margin: EdgeInsets.symmetric(horizontal: 20),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -78,7 +77,7 @@ class _CountryPageState extends State<CountryPage> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Text(
-                                'Confirmed: ' +
+                                'Total Cases: ' +
                                     countryData[index]['cases'].toString(),
                                 style: TextStyle(
                                     color: Colors.red),
@@ -96,7 +95,7 @@ class _CountryPageState extends State<CountryPage> {
                                     color: Colors.green),
                               ),
                               Text(
-                                'Deaths: ' +
+                                'Total Deaths: ' +
                                     countryData[index]['deaths'].toString(),
                                 style: TextStyle(
                                     color: Theme.of(context).brightness==Brightness.dark?Colors.grey[100]:Colors.grey[900]),
@@ -118,11 +117,11 @@ class _CountryPageState extends State<CountryPage> {
                         ))
                       ],
                     ),
-                  ),
-                );
+                  );
               },
               itemCount: countryData == null ? 0 : countryData.length,
             ),
+
     );
   }
 }

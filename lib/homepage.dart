@@ -5,6 +5,7 @@ import 'package:flutterapptest/pages/countypage.dart';
 import 'package:flutterapptest/panels/infopanel.dart';
 import 'package:flutterapptest/panels/worldwidepanel.dart';
 import 'package:flutterapptest/panels/mywidepanel.dart';
+import 'package:flutterapptest/panels/mosteffectedcountries.dart';
 import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
@@ -98,7 +99,8 @@ class _HomePageState extends State<HomePage> {
                   child: Container(
                       decoration: BoxDecoration(
                           color: primaryBlack,
-                          borderRadius: BorderRadius.circular(5)),
+//                          borderRadius: BorderRadius.circular(5)
+                      ),
                       padding: EdgeInsets.all(10),
                       child: Text(
                         'Regional',
@@ -159,6 +161,36 @@ class _HomePageState extends State<HomePage> {
               : MywidePanel(
             myData: myData,
           ),
+
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10),
+            child: Text(
+              'Most Affected Countries',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,
+                  color: Colors.grey[700]),
+            ),
+          ),
+          SizedBox(
+            height: 10,
+          ),
+
+          countryData == null
+              ? Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              CircularProgressIndicator(),
+            ],
+          )
+              : MostAffectedPanel(
+            countryData: countryData,
+          ),
+
+//          countryData == null
+//              ? Container()
+//              : MostAffectedPanel(
+//            countryData: countryData,
+//          ),
 
           InfoPanel(),
           SizedBox(
